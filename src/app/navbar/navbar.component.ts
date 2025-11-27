@@ -1,20 +1,11 @@
-import { RouterLink, RouterOutlet } from '@angular/router';
 import { Component } from '@angular/core';
-import { initFlowbite } from 'flowbite';
-
-
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterOutlet, NavbarComponent, RouterLink],
+  standalone: true,
+  imports: [RouterLink],          
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
-  title= 'AngularSegundo02';
-  ngOnInit():void{
-    initFlowbite();
-
-  }
-
-}
+export class NavbarComponent {}

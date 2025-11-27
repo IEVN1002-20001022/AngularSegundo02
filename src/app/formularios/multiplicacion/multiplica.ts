@@ -1,6 +1,6 @@
 export class Multiplica {
 
-numero1: number=0; //viene por defecto en public
+numero1: number=0; 
 numero2: number=0;
 
 resultado: number=8;

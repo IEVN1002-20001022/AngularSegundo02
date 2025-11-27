@@ -1,88 +1,41 @@
-<div class="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 mt-8">
-  <h1 class="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">
-    Multiplica Números
-  </h1>
+<div class="container mt-4">
 
-  <form [formGroup]="formulario" class="space-y-4">
-    <!-- Número 1 -->
-    <div>
-      <label for="numero1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-        Número 1
-      </label>
-      <input
-        type="number"
-        id="numero1"
-        name="numero1"
-        formControlName="numero1"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-        placeholder="Ingresa el primer número"
-      />
+  <h2 class="text-center mb-4">Multiplica Números</h2>
+
+  <form [formGroup]="formulario" class="p-3 border rounded shadow-sm" style="max-width: 500px; margin: auto;">
+
+    <div class="mb-3">
+      <label for="numero1" class="form-label">Número 1</label>
+      <input type="number" id="numero1" class="form-control" formControlName="numero1">
     </div>
 
-    <!-- Número 2 -->
-    <div>
-      <label for="numero2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-        Número 2
-      </label>
-      <input
-        type="number"
-        id="numero2"
-        name="numero2"
-        formControlName="numero2"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-        placeholder="Ingresa el segundo número"
-      />
+    <div class="mb-3">
+      <label for="numero2" class="form-label">Número 2</label>
+      <input type="number" id="numero2" class="form-control" formControlName="numero2">
     </div>
 
-    <!-- Número 3 -->
-    <div>
-      <label for="numero3" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-        Número 3
-      </label>
-      <input
-        type="number"
-        id="numero3"
-        name="numero3"
-        formControlName="numero3"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-        placeholder="Ingresa el tercer número"
-      />
+    <div class="mb-3">
+      <label for="numero3" class="form-label">Número 3</label>
+      <input type="number" id="numero3" class="form-control" formControlName="numero3">
     </div>
 
-    <!-- Número 4 -->
-    <div>
-      <label for="numero4" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-        Número 4
-      </label>
-      <input
-        type="number"
-        id="numero4"
-        name="numero4"
-        formControlName="numero4"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-        placeholder="Ingresa el cuarto número"
-      />
+    <div class="mb-3">
+      <label for="numero4" class="form-label">Número 4</label>
+      <input type="number" id="numero4" class="form-control" formControlName="numero4">
     </div>
 
-    <!-- Botón -->
-    <button
-      type="button"
-      (click)="multiNumeros()"
-      class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
-    >
-      Multiplicar
-    </button>
-
-    <!-- Resultados -->
-    <div class="mt-6 bg-gray-50 dark:bg-gray-700 p-4 rounded-lg text-gray-900 dark:text-white">
-      <h2 class="text-lg font-semibold mb-2">Resultados</h2>
-      <p>Número 1: {{ n1 }}</p>
-      <p>Número 2: {{ n2 }}</p>
-      <p>Número 3: {{ n3 }}</p>
-      <p>Número 4: {{ n4 }}</p>
-      <p class="mt-2 font-bold text-blue-700 dark:text-blue-400">
-        Resultado: {{ resultado }}
-      </p>
+    <div class="d-grid mb-3">
+      <button type="button" class="btn btn-primary" (click)="multiNumeros()">Multiplicar</button>
     </div>
+
+    <div class="alert alert-info" *ngIf="resultado !== null">
+      <strong>Número 1:</strong> {{ n1 }} <br>
+      <strong>Número 2:</strong> {{ n2 }} <br>
+      <strong>Número 3:</strong> {{ n3 }} <br>
+      <strong>Número 4:</strong> {{ n4 }} <br>
+      <hr>
+      <strong>Resultado:</strong> {{ resultado }}
+    </div>
+
   </form>
 </div>

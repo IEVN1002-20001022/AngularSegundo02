@@ -10,7 +10,7 @@ export default [
     loadComponent:()=>import('./alumnos/alumnos.component').then(c=>c.AlumnosComponent)
   },
   {
-    path:'editar',
+    path:'editar/:matricula',
     loadComponent:()=>import('./editar/editar.component').then(c=>c.EditarComponent)
   },
   {
